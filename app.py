@@ -1,35 +1,36 @@
+# app.py
 import streamlit as st
 import joblib
-import re
 
-# Load model and vectorizer
-model = joblib.load("phishing_model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+# Load trained model and vectorizer
+model = joblib.load("model/logistic_model.pkl")
+vectorizer = joblib.load("model/tfidf_vectorizer.pkl")
 
-# Text cleaning function
-def clean_text(text):
-    text = text.lower()
-    text = re.sub(r"http\S+", "", text)
-    text = re.sub(r"\W", " ", text)
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
-
-# Prediction function
-def predict_email(email):
-    clean = clean_text(email)
-    vector = vectorizer.transform([clean])
-    prediction = model.predict(vector)
-    return "Phishing Email" if prediction[0] == 1 else "Safe Email"
+# Label mapping (adjust based on your training labels)
+label_map = {
+    0: "Safe Email",
+    1: "Phishing Email"
+}
 
 # Streamlit UI
-st.title("AI Phishing Email Detector")
-st.write("Paste an email below to check if it's phishing or not.")
+st.set_page_config(page_title="AI Phishing Detector", layout="centered")
+st.title("🔐 AI Phishing Email Detector")
+st.markdown("Enter an email text below to check if it's **Safe** or **Phishing**.")
 
-email_input = st.text_area("Email Content", height=200)
+# Input box
+email_text = st.text_area("📩 Paste email content here:", height=200)
 
-if st.button("Analyze"):
-    if email_input.strip():
-        result = predict_email(email_input)
-        st.success(f"Result: {result}")
+# Predict button
+if st.button("🔍 Detect"):
+    if email_text.strip() == "":
+        st.warning("Please enter some email content.")
     else:
-        st.warning("Please enter some email text.")
+        transformed_input = vectorizer.transform([email_text])
+        prediction = model.predict(transformed_input)[0]
+
+        label = label_map[prediction]
+
+        if label == "Phishing Email":
+            st.error("🚨 This is likely a **Phishing Email**!")
+        else:
+            st.success("✅ This appears to be a **Safe Email**.")

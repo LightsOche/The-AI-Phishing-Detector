@@ -1,10 +1,13 @@
-# scripts/load_data.py
 import pandas as pd
 
 def load_data():
-    df = pd.read_csv("data/phishing_data.csv")
-    print("Data loaded successfully. Here's a preview:")
-    print(df.head())
+    # Load the new dataset
+    data_path = 'data/phishing_validation_emails.csv'
+    df = pd.read_csv(data_path)
 
-if __name__ == "__main__":
-    load_data()
+    # Show basic info
+    print("✅ Dataset loaded successfully.")
+    print(f"📊 Shape: {df.shape}")
+    print(f"🧾 Columns: {list(df.columns)}")
+    
+    return df
