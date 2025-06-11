@@ -47,3 +47,4 @@ if st.button("🔍 Detect"):
         else:
             st.success("✅ This appears to be a **Safe Email**.")
 
+Cleaned up Streamlit app for public deployment
