@@ -46,4 +46,4 @@ if st.button("🔍 Detect"):
             st.error("🚨 This is likely a **Phishing Email**!")
         else:
             st.success("✅ This appears to be a **Safe Email**.")
-Cleaned up Streamlit app for public deployment
+
