@@ -155,6 +155,12 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 **Project by:** [Lights Oche](https://github.com/LightsOche)
 
+## 📽️ Demo Video
+
+Watch the full demo of the AI Phishing Detection project:
+
+👉 [Click here to watch on Google Drive](https://drive.google.com/file/d/1sLjLej_zu8LCpXsTsZQ3qbHl4fnKmvXO/view?usp=sharing)
+
 Special thanks to:
 
 * 3MTT Cybersecurity Track
