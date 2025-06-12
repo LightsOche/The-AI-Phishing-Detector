@@ -165,6 +165,13 @@ Watch the full demo of the AI Phishing Detection project:
 
 Try the app here: [AI Phishing Detector on Streamlit](https://the-ai-phishing-detector-gedwfrkdozedpemibjbzt3.streamlit.app/)
 
+### 🛡️ AI Phishing Detector
+An intelligent phishing email classifier built with Python and Streamlit.
+
+🚀 [Live App](https://the-ai-phishing-detector-gedwfrkdozedpemibjbzt3.streamlit.app/)  
+📂 [Source Code](https://github.com/LightsOche/The-AI-Phishing-Detector)  
+🎥 [Demo Video](https://drive.google.com/file/d/1sLjLej_zu8LCpXsTsZQ3qbHl4fnKmvXO/view?usp=sharing)
+
 Special thanks to:
 
 * 3MTT Cybersecurity Track
