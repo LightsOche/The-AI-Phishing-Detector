@@ -161,6 +161,10 @@ Watch the full demo of the AI Phishing Detection project:
 
 👉 [Click here to watch on Google Drive](https://drive.google.com/file/d/1sLjLej_zu8LCpXsTsZQ3qbHl4fnKmvXO/view?usp=sharing)
 
+## 🔗 Live Demo
+
+Try the app here: [AI Phishing Detector on Streamlit](https://the-ai-phishing-detector-gedwfrkdozedpemibjbzt3.streamlit.app/)
+
 Special thanks to:
 
 * 3MTT Cybersecurity Track
