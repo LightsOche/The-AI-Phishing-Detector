@@ -4,6 +4,13 @@ import streamlit as st
 import joblib
 import re
 
+import datetime
+
+def log_usage(email_text, prediction):
+    log_entry = f"{datetime.datetime.now()} | Prediction: {prediction} | Input: {email_text[:50]}...\n"
+    with open("usage_log.txt", "a", encoding="utf-8") as log_file:
+        log_file.write(log_entry)
+
 # Set page config early
 st.set_page_config(page_title="AI Phishing Detector", layout="centered")
 
@@ -42,9 +49,12 @@ if st.button("🔍 Detect"):
         prediction = model.predict(transformed)[0]
         label = label_map[prediction]
 
-        if label == "Phishing Email":
-            st.error("🚨 This is likely a **Phishing Email**!")
-        else:
-            st.success("✅ This appears to be a **Safe Email**.")
+       if label == "Phishing Email":
+    st.error("🚨 This is likely a **Phishing Email**!")
+    log_usage(email_text, "Phishing")
+else:
+    st.success("✅ This appears to be a **Safe Email**.")
+    log_usage(email_text, "Safe")
+
 
 
